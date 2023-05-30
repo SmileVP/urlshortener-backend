@@ -14,7 +14,7 @@ require("dotenv").config();
 mongoose.connect(dbUrl);
 
 //frontend url
-let url = "http://localhost:3000";
+let url = "https://sprightly-truffle-32a2d6.netlify.app";
 
 //create user
 router.post("/signUp", async (req, res) => {
@@ -84,7 +84,7 @@ router.post("/send-email", async (req, res) => {
     if (user) {
       let firstName = user.firstName;
       let email = user.email;
-      
+
       //create token
       let token = jwt.sign({ firstName, email }, process.env.SECRET_KEY, {
         expiresIn: process.env.EXPIRE,
